@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <body>
 
-  <div>
+  <div><label>Access: Token: </label>
   	<input type="text" id="token" name="token">
   </div>
   
@@ -15,14 +15,20 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		console.log("working")
-    	var urlParams = new URLSearchParams(window.location.search);
-    	console.log(urlParams)
+  		if (window.location) {
+  		var url = window.location.href.split('#');
+    	console.log(url)
+    	if (url.length > 1) {
+    		var access = url[1].split("=");
+    	console.log(access)
 
-		var myParam = urlParams.get('#access_token');
-		console.log(myParam)
-		if (myParam != null) {
-			document.getElementById('toke').value = myParam;
+		if (access != null) {
+			document.getElementById('token').value = access[1];
 		}
+    	}
+    	
+  		}
+    	
 		
 
 	}
