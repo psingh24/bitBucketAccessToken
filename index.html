@@ -8,7 +8,7 @@
   <body>
 
   <div><label>Access: Token: </label>
-  	<input type="text" id="token" name="token">
+  	<h4 id="token"></h4>
   </div>
   
 
@@ -24,7 +24,7 @@
 
 		if (access != null) {
 			let token = access[0].split('=')
-			document.getElementById('token').value = token[1];
+			document.getElementById('token').innerHTML = token[1];
 		}
     	}
     	
