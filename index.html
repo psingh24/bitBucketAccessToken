@@ -19,11 +19,12 @@
   		var url = window.location.href.split('#');
     	console.log(url)
     	if (url.length > 1) {
-    		var access = url[1].split("=");
+    		var access = url[1].split("&");
     	console.log(access)
 
 		if (access != null) {
-			document.getElementById('token').value = access[1];
+			let token = access[0].split('=')
+			document.getElementById('token').value = token[1];
 		}
     	}
     	
