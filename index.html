@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <body>
+
+  <div>
+  	<input type="text" id="token" name="token">
+  </div>
+  
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		console.log("working")
+    	var urlParams = new URLSearchParams(window.location.search);
+    	console.log(urlParams)
+
+		var myParam = urlParams.get('access_token');
+		console.log(myParam)
+		if (myParam != null) {
+			document.getElementById('toke').value = myParam;
+		}
+		
+
+	}
+	)
+  </script>
+  </body>
+</html>
